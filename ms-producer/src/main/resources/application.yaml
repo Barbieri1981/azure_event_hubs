@@ -3,10 +3,10 @@ spring:
     azure:
       eventhubs:
         ##Valor del espacio de nombres de Event Hubs
-        namespace: event-hub-demo
+        namespace: ${AZURE_EVENTHUBS_NAMESPACE}
     stream:
       bindings:
         supply-out-0:
-          destination: event-hub-demo
+          destination: ${AZURE_EVENTHUB_NAME}
       function:
         definition: supply;

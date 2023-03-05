@@ -7,6 +7,7 @@ Expose a Restful API to send a message which is published to a `Event Hub` insta
 - [Azure Portal](https://portal.azure.com/)
 - [JDK8](https://www.oracle.com/java/technologies/downloads/) or later
 - [Spring Cloud Stream](https://spring.io/blog/2019/04/02/event-driven-java-with-spring-cloud-stream-and-azure-event-hubs-guest-post)
+- [Project Reactor](https://projectreactor.io/)
 - Maven
 
 ## Run Locally

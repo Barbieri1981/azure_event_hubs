@@ -1,5 +1,6 @@
 package com.eventhub.msproducer.config;
 
+import com.eventhub.msproducer.Util.Util;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,9 +9,6 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Sinks;
 
 import java.util.function.Supplier;
-
-import static com.eventhub.msproducer.constant.Constant.LOG_ERROR_MESSAGE;
-import static com.eventhub.msproducer.constant.Constant.LOG_SEND_MESSAGE;
 
 
 @Slf4j
@@ -25,7 +23,7 @@ public class EventProducerConfig {
     @Bean
     public Supplier<Flux<Message<String>>> supply(Sinks.Many<Message<String>> many) {
         return () -> many.asFlux()
-                .doOnNext(m -> log.info(LOG_SEND_MESSAGE, m))
-                .doOnError(t -> log.error(LOG_ERROR_MESSAGE, t));
+                .doOnNext(Util.onNext())
+                .doOnError(Util.onError());
     }
 }
