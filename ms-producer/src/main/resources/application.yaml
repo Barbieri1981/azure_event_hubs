@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    azure:
+      eventhubs:
+        ##Valor del espacio de nombres de Event Hubs
+        namespace: event-hub-demo
+    stream:
+      bindings:
+        supply-out-0:
+          destination: event-hub-demo
+      function:
+        definition: supply;
