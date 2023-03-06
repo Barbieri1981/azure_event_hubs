@@ -26,14 +26,12 @@ public class EventProducerController {
 
     @PostMapping("/messages/reactive")
     public ResponseEntity<String> sendDataReactive(final @RequestParam String request) {
-        log.info("Reactive method to send message: {} to destination.", request);
         this.many.emitNext(MessageBuilder.withPayload(request).build(), Sinks.EmitFailureHandler.FAIL_FAST);
         return ResponseEntity.ok(request);
     }
 
     @PostMapping("/messages/imperative")
     public ResponseEntity<String> sendDataImperative(final @RequestParam String request) {
-        log.info("Imperative method to send message: {} to static destination.", request);
         this.streamBridge.send(STREAM_BINDING_DESTINATION, request);
         return ResponseEntity.ok(request);
     }
