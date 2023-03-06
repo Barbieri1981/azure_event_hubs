@@ -1,6 +1,6 @@
 package com.eventhub.msproducer.config;
 
-import com.eventhub.msproducer.Util.Util;
+import com.eventhub.msproducer.util.Util;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

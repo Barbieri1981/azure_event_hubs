@@ -1,4 +1,4 @@
-package com.eventhub.msproducer.Util;
+package com.eventhub.msproducer.util;
 
 import lombok.extern.slf4j.Slf4j;
 
