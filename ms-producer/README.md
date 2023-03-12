@@ -27,11 +27,11 @@ spring:
       function:
         definition: supply;
 ```
-| Field                                                     | Description              |
-|-----------------------------------------------------------|--------------------------|
-| `spring.cloud.azure.eventhubs.namespace`                  | Event Hubs Namespace.    |
-| `spring.cloud.stream.bindings.producer-out-0.destination` | Bean to produce message. |
-| `spring.cloud.stream.function.definition`                 | Event Hubs Instance.     |
+| Field                                                     | Description             |
+|-----------------------------------------------------------|-------------------------|
+| `spring.cloud.azure.eventhubs.namespace`                  | Event Hubs Namespace.   |
+| `spring.cloud.stream.bindings.producer-out-0.destination` | Event Hubs Instance.    |
+| `spring.cloud.stream.function.definition`                 | Bean to produce events. |
 
 
 ## Run Locally

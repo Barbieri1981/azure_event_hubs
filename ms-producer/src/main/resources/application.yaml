@@ -2,12 +2,10 @@ spring:
   cloud:
     azure:
       eventhubs:
-        ##SEvent Hubs Namespace
-        namespace: event-hub-demo
+        namespace: ${AZURE_EVENTHUBS_NAMESPACE}
     stream:
       bindings:
         producer-out-0:
-          ##Event Hubs Instance
-          destination: event-hub-demo
+          destination: ${AZURE_EVENTHUB_NAME}
       function:
         definition: producer;

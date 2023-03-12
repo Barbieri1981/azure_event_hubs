@@ -1,7 +1,7 @@
-# Produce and consume data using Java and the library Spring Cloud Stream Binder from Spring Boot Application
+# Produce and consume events using Java and the library Spring Cloud Stream Binder from Spring Boot Application
 
-Expose a Restful API to consume data from a `Event Hub` instance.   
-Expose a Restful API to send data to a `Event Hub` instance.   
+Expose a Restful API to consume events from a `Event Hub` instance.   
+Expose a Restful API to send events to a `Event Hub` instance.   
 
 ## Technology
 
