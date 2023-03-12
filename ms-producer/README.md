@@ -47,7 +47,7 @@ mvn clean spring-boot:run
 To send a event, in the terminal run   
 
 ```shell
-curl --location --request POST 'http://localhost:8080/message?req=hello' \
+curl --location --request POST 'http://localhost:8080/event?req=hello' \
 --header 'Content-Type: text/plain' \
 --data-raw '
 '
