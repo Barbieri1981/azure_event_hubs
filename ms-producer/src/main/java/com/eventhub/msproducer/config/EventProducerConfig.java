@@ -15,15 +15,27 @@ import java.util.function.Supplier;
 @Configuration
 public class EventProducerConfig {
 
+    /**
+     * Sinks is a producer and a subscriber
+     * Returns the handler which pushes events
+     * @return handler which pushes events {@link Sinks}
+     */
     @Bean
-    public Sinks.Many<Message<String>> many() {
+    public Sinks.Many<Message<String>> sinksMany() {
         return Sinks.many().unicast().onBackpressureBuffer();
     }
 
+    /**
+     * Sinks is a producer and subscriber
+     * Returns the handler which receives events
+     * @param sinksMany the handler
+     * @return the handler which receives events {@link Flux}
+     */
     @Bean
-    public Supplier<Flux<Message<String>>> supply(Sinks.Many<Message<String>> many) {
-        return () -> many.asFlux()
+    public Supplier<Flux<Message<String>>> producer(final Sinks.Many<Message<String>> sinksMany) {
+        return () -> sinksMany.asFlux()
                 .doOnNext(Util.onNext())
                 .doOnError(Util.onError());
     }
+
 }

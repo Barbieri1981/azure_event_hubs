@@ -1,0 +1,31 @@
+spring:
+  cloud:
+    azure:
+      eventhubs:
+        ##Valor del espacio de nombres de Event Hubs
+        namespace: event-hub-demo
+        processor:
+          ##Contiene la configuración del servicio Azure Blob Storage.
+          ##Se utiliza para marcar los mensajes que se han leído.
+          checkpoint-store:
+            ##Nombre de la cuenta de almacenamiento.
+            account-name: storageeventhubdemo01
+            ##Nombre del contenedor de almacenamiento.
+            container-name: eventhubcontainer
+    stream:
+      bindings:
+        consume-in-0:
+          destination: event-hub-demo
+          group: $Default
+      eventhubs:
+        bindings:
+          consume-in-0:
+            consumer:
+              checkpoint:
+                #Modo del punto de control
+                mode: MANUAL
+      function:
+        definition: consume;
+      poller:
+        initial-delay: 0
+        fixed-delay: 1000

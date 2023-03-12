@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.event-hub</groupId>
-	<artifactId>ms-producer</artifactId>
+	<artifactId>ms-consumer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ms-producer</name>
-	<description>Event Hubs Event Producer</description>
+	<name>ms-consumer</name>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud-azure.version>4.6.0</spring-cloud-azure.version>
@@ -44,7 +44,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
