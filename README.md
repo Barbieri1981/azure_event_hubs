@@ -3,6 +3,10 @@
 Expose a Restful API to consume events from a `Event Hub` instance.   
 Expose a Restful API to send events to a `Event Hub` instance.   
 
+![alt text](https://github.com/Barbieri1981/azure_event_hubs/resources/components.jpg?raw=true)
+
+
+
 ## Technology
 
 - [Azure Portal](https://portal.azure.com/)
