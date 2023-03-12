@@ -1,6 +1,6 @@
 package com.eventhub.msproducer.controller;
 
-import com.eventhub.msproducer.constant.Constant;
+import com.eventhub.msproducer.config.EventHubConfig;
 import com.eventhub.msproducer.dto.Subscription;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +26,9 @@ public class EventProducerController {
     @Autowired
     private StreamBridge streamBridge;
 
+    @Autowired
+    private EventHubConfig eventHubConfig;
+
 
     @PostMapping("/event")
     public ResponseEntity<String> processEvents(final @RequestParam String req) {
@@ -35,7 +38,7 @@ public class EventProducerController {
 
     @PostMapping("/subscription")
     public ResponseEntity<Subscription> processSubscription(final @RequestBody @Valid Subscription req) {
-        this.streamBridge.send(Constant.STREAM_BINDING_DESTINATION, req);
+        this.streamBridge.send(this.eventHubConfig.getBindingName(), req);
         return ResponseEntity.ok(req);
     }
 }

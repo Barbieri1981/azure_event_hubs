@@ -59,9 +59,9 @@ To send a subscription, in the terminal run
 curl --location --request POST 'http://localhost:8080/subscription' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "email": "jorge.perez@gmail.com",
+  "email": "santiago.perez@gmail.com",
   "birthDate": "2010-10-11",
-  "firstName": "Jorge",
+  "firstName": "Santiago",
   "gender": "M"
 }'
 ```
