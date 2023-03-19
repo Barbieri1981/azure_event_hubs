@@ -21,8 +21,8 @@ spring:
         namespace: ${AZURE_EVENTHUBS_NAMESPACE}
         processor:
           checkpoint-store:
-            account-name: ${AZURE_STORAGE_CONTAINER_NAME}
-            container-name: ${AZURE_STORAGE_ACCOUNT_NAME}
+            account-name: ${AZURE_STORAGE_ACCOUNT_NAME}
+            container-name: ${AZURE_STORAGE_CONTAINER_NAME}
     stream:
       bindings:
         consume-in-0:
